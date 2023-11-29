@@ -22,3 +22,20 @@
       state: absent
     when: ansible_distribution == "CentOS"
 
+- hosts: db-servers
+  become: yes
+  tasks:
+
+  - name: remove mariadb Ubuntu
+    tags: ubuntu,db,mariadb
+    apt:
+      name: mariadb-server
+      state: absent
+    when: ansible_distribution == "Ubuntu"
+
+  - name: remove mariadb CentOS
+    tags: ubuntu,db,mariadb
+    package:
+      name: mariadb-server
+      state: absent
+    when: ansible_distribution == "CentOS"
