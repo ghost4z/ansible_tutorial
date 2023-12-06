@@ -6,3 +6,6 @@
 
 [fileservers]
 192.168.120.222
+
+[workstations]
+192.168.120.133
